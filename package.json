@@ -1,0 +1,56 @@
+{
+  "name": "A0524UnitTest",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "storybook": "storybook start -p 7007"
+  },
+  "dependencies": {
+    "apisauce": "^0.15.2",
+    "cross-fetch": "^2.2.1",
+    "react": "16.3.1",
+    "react-native": "0.55.4",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.4.7",
+    "@storybook/addon-links": "^3.4.7",
+    "@storybook/addons": "^3.4.7",
+    "@storybook/react-native": "^3.4.7",
+    "babel-core": "^6.26.3",
+    "babel-jest": "22.4.4",
+    "babel-preset-react-native": "4.0.0",
+    "babel-runtime": "^6.26.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest": "^22.4.4",
+    "prop-types": "^15.6.1",
+    "react-dom": "^16.4.0",
+    "react-native-mock": "^0.3.1",
+    "react-test-renderer": "^16.3.1",
+    "redux-devtools": "^3.4.1"
+  },
+  "jest": {
+    "preset": "react-native",
+    "testMatch": [
+      "<rootDir>/__tests__/**/*.js",
+      "**/?(*.)(spec|test).js?(x)"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "<rootDir>/__tests__/Setup.js"
+    ],
+    "unmockedModulePathPatterns": [
+      "node_modules/react/",
+      "node_modules/enzyme/"
+    ],
+    "setupFiles": [
+      "<rootDir>/__tests__/Setup"
+    ]
+  }
+}
