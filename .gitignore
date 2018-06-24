@@ -30,41 +30,27 @@ build/
 local.properties
 *.iml
 
-# iOS
-Pods/
-
 # node.js
 #
 node_modules/
 npm-debug.log
 yarn-error.log
-yarn.lock.md5
 
 # BUCK
 buck-out/
 \.buckd/
 *.keystore
 
-# Test report
-coverage/
-
 # fastlane
 #
 # It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
 # screenshots whenever they are needed.
 # For more information about the recommended setup visit:
-# https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Gitignore.md
+# https://docs.fastlane.tools/best-practices/source-control/
 
-fastlane/report.xml
-fastlane/Preview.html
-fastlane/screenshots
+*/fastlane/report.xml
+*/fastlane/Preview.html
+*/fastlane/screenshots
 
-# storybook
-storybook/storybook_config.json
-
-# Python
-*.pyc
-
-*.pyc
-
-ios/fastlane/report.xml
+# Bundle artifact
+*.jsbundle
