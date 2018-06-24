@@ -378,87 +378,12 @@ shallow只渲染当前组件，只能能对当前组件做断言；mount会渲�
 工具函数一般要验证各种参数下的函数返回结果
 
 ```js
-// WorkbenchUtils.js
-// @flow
-// import type {
-  EngineMenuInfo,
-} from 'ofo_redux/types';
-
-const ContainerIds = {
-  Activate_Bike: 103,
-  Activation_Status: 104,
-  Tag_Bike_Location: 105,
-  Disengage_Lock: 106,
-  Unfreeze_Bike: 107,
-  Reset_Repaired_Bike: 108,
-  Task: 114,
-};
-const getContainerTitle = (type: number, menus: Array<EngineMenuInfo>) => {
-  if (!type) {
-    return '';
-  }
-  if (menus) {
-    for (let i = 0; i < menus.length; i += 1) {
-      if (menus[i].id === type) {
-        return menus[i].name;
-      }
-    }
-  }
-  return '';
-};
-const checkContainer = (type: number, menus: Array<EngineMenuInfo>) => {
-  if (type && menus) {
-    for (let i = 0; i < menus.length; i += 1) {
-      if (menus[i].id === type) {
-        return true;
-      }
-    }
-  }
-  return false;
-};
-export {
-  ContainerIds,
-  getContainerTitle,
-  checkContainer,
-};
 ```
 
 
 
 ```javascript
-// WorkbenchUtils.test.js
-import {
-  ContainerIds,
-  getContainerTitle,
-  checkContainer,
-} from 'ofo_util/WorkbenchUtils';
 
-const menu = [
-    {
-      "name": "Reset Repaired Bike",
-      "icon": "http://ofo-testmeixi-image.oss-us-west-1.aliyuncs.com/report/46d4cd3a8966befb2d01adc4cc4d5a62.png",
-      "router": "askofo://so.ofo.engine.intl/?page=EngineBikeRelease",
-      "id": 108
-    }
-    // ...
-  ];
-
-describe('WorkbenchUtils', () => {
-
-  test('checkContainer exist', () => {
-    expect(checkContainer(ContainerIds.Disengage_Lock, menu)).toBeTruthy();
-    expect(checkContainer(ContainerIds.Activate_Bike, menu)).toBeTruthy();
-    expect(checkContainer(ContainerIds.Activation_Status, menu)).toBeTruthy();
-    expect(checkContainer(ContainerIds.Unfreeze_Bike, menu)).toBeTruthy();
-    expect(checkContainer(ContainerIds.Tag_Bike_Location, menu)).toBeTruthy();
-    expect(checkContainer(ContainerIds.Reset_Repaired_Bike, menu)).toBeTruthy();
-  });
-
-  test('checkContainer not exist', () => {
-    expect(checkContainer(ContainerIds.Task, menu)).toBeFalsy();
-  });
-
-});
 ```
 
 
